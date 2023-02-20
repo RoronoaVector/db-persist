@@ -3,12 +3,13 @@ package com.victor.dbpersist.mappers;
 import com.victor.dbpersist.dto.FileDto;
 import com.victor.dbpersist.dto.FileDto.FileDtoBuilder;
 import com.victor.dbpersist.entity.FileEntity;
+import com.victor.dbpersist.entity.FileEntity.FileEntityBuilder;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-02-13T23:31:25+0100",
+    date = "2023-02-20T23:45:49+0100",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.2 (Oracle Corporation)"
 )
 @Component
@@ -22,7 +23,7 @@ public class FileMapperImpl implements FileMapper {
 
         FileDtoBuilder fileDto = FileDto.builder();
 
-        fileDto.name( entity.getName() );
+        fileDto.nameUser( entity.getNameUser() );
         fileDto.surname( entity.getSurname() );
         fileDto.priority( entity.getPriority() );
         fileDto.description( entity.getDescription() );
@@ -36,13 +37,13 @@ public class FileMapperImpl implements FileMapper {
             return null;
         }
 
-        FileEntity fileEntity = new FileEntity();
+        FileEntityBuilder fileEntity = FileEntity.builder();
 
-        fileEntity.setName( dto.getName() );
-        fileEntity.setSurname( dto.getSurname() );
-        fileEntity.setPriority( dto.getPriority() );
-        fileEntity.setDescription( dto.getDescription() );
+        fileEntity.nameUser( dto.getNameUser() );
+        fileEntity.surname( dto.getSurname() );
+        fileEntity.priority( dto.getPriority() );
+        fileEntity.description( dto.getDescription() );
 
-        return fileEntity;
+        return fileEntity.build();
     }
 }

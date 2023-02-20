@@ -1,0 +1,16 @@
+server:
+ port: 8081
+
+spring:
+ datasource:
+  url: jdbc:postgresql://localhost:5432/postgres?currentSchema=files_schema
+  username: admin
+  password: admin
+
+kafka:
+ bootstrapAddress: 127.0.0.1:29092
+ topic:
+  destination:
+   files: files
+   employees: employees
+ groupId: firstGroup

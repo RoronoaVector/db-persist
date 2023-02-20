@@ -7,11 +7,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class FileDto {
+public class FileEmployeeDto {
 
-    private String nameUser;
+    private String name;
     private String surname;
-    private String priority;
-    private String description;
+    private String telephone;
+    private String mail;
+    private String enterprise;
 
 }
