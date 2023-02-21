@@ -30,7 +30,7 @@ public class KafkaConsumerConfig {
 
         JsonDeserializer<FileDto> deserializer = new JsonDeserializer<>(FileDto.class);
         deserializer.setRemoveTypeHeaders(false);
-        deserializer.addTrustedPackages("*");
+        deserializer.addTrustedPackages("*");//Esto quizas no es la mejor idea
         deserializer.setUseTypeMapperForKey(true);
 
         Map<String, Object> props = new HashMap<>();

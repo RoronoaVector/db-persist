@@ -11,7 +11,6 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-@Builder(toBuilder = true)
 public class FileEntity {
 
     @Id
